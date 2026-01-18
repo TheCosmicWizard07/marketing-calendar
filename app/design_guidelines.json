@@ -1,0 +1,189 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "E1_Marketing_Calendar",
+      "persona": "The Anti-AI Designer",
+      "principles": [
+        "Fusion over Imitation",
+        "Emotion First",
+        "Content is King",
+        "Zoom In",
+        "Negative Space",
+        "Contrast"
+      ]
+    },
+    "theme": {
+      "default": "light",
+      "strategy": "Swiss & High-Contrast with Vibrant Accents",
+      "description": "Objective, rigid, and functional base with vibrant, distinct colors for data (calendar events) to guide action."
+    },
+    "typography": {
+      "strategy": "The Soft Utility",
+      "headings": {
+        "family": "Manrope, sans-serif",
+        "weights": ["600", "800"],
+        "tracking": "tracking-tight",
+        "usage": "Use for all page titles, section headers, and modal titles. Avoid Inter."
+      },
+      "body": {
+        "family": "IBM Plex Sans, sans-serif",
+        "weights": ["400", "500"],
+        "leading": "leading-relaxed",
+        "usage": "Use for all standard text, inputs, and data cells."
+      },
+      "mono": {
+        "family": "JetBrains Mono, monospace",
+        "usage": "Use for dates, IDs, and status codes."
+      }
+    },
+    "colors": {
+      "palette": {
+        "base": {
+          "background": "#FFFFFF",
+          "foreground": "#0F172A",
+          "card": "#FFFFFF",
+          "card_foreground": "#0F172A",
+          "muted": "#F1F5F9",
+          "muted_foreground": "#64748B",
+          "border": "#E2E8F0"
+        },
+        "primary": {
+          "default": "#0F172A",
+          "foreground": "#F8FAFC"
+        },
+        "accents": {
+          "event_social": "#FF6B6B",
+          "event_email": "#4ECDC4",
+          "event_blog": "#FFE66D",
+          "event_ads": "#1A535C",
+          "status_draft": "#94A3B8",
+          "status_scheduled": "#3B82F6",
+          "status_published": "#10B981"
+        }
+      },
+      "rules": [
+        "No generic full-screen gradients.",
+        "Use 'Tinted Grey' rule: Neutral greys must have a tiny bit of blue.",
+        "Contrast: Ensure 4.5:1 ratio for normal text.",
+        "Interactive elements must have explicit hover colors."
+      ]
+    },
+    "spacing": {
+      "scale": ["p-1", "p-2", "p-4", "p-6", "p-8", "p-12", "p-16", "p-24", "p-32"],
+      "rules": [
+        "Generous Spacing: Use 2-3x more spacing than typical designs.",
+        "Containers with borders must have internal padding (p-6 or p-8).",
+        "Mobile-first responsive design."
+      ]
+    },
+    "layout": {
+      "grid_system": {
+        "dashboard": {
+          "mode": "Mode A: The Tetris Grid",
+          "columns": "grid-cols-1 md:grid-cols-8 lg:grid-cols-12",
+          "gap": "gap-6",
+          "rules": "Asymmetry creates tension. Never fill 100% perfectly."
+        },
+        "calendar": {
+          "mode": "Mode B: High Density Grid",
+          "columns": "grid-cols-7",
+          "gap": "gap-px",
+          "rules": "Every pixel utilized. Strict alignment."
+        }
+      },
+      "containers": {
+        "card_style": "Flat background, 1px subtle border (border-border), no shadow by default. Hover: Slight lift (-translate-y-1), subtle shadow (shadow-lg).",
+        "glassmorphism": "Use for sticky headers and floating navs. bg-white/70, backdrop-blur-xl, border-white/40."
+      }
+    },
+    "components": {
+      "buttons": {
+        "style": "Sharp or Pill-shaped. No default rounded-md.",
+        "interaction": "Scale down slightly on click (active:scale-95)."
+      },
+      "inputs": {
+        "style": "Shadcn Input with customized border and focus ring.",
+        "behavior": "Focus states must have higher contrast."
+      },
+      "calendar_view": {
+        "description": "Custom grid implementation using CSS Grid.",
+        "features": ["Drag and drop", "Resizable events", "Popover details"]
+      },
+      "cards": {
+        "usage": "Go cardless where possible. Use whitespace to separate content."
+      }
+    },
+    "motion": {
+      "library": "framer-motion",
+      "transitions": {
+        "default": "transition: transform 0.2s ease, opacity 0.2s ease",
+        "hover": "scale: 1.02",
+        "page_load": "opacity: 0 -> 1, y: 20 -> 0"
+      },
+      "rules": [
+        "Respect prefers-reduced-motion.",
+        "No 'transition: all'.",
+        "Micro-interactions for all clickable elements."
+      ]
+    },
+    "assets": {
+      "icons": {
+        "library": "lucide-react",
+        "style": "Stroke width 1.5px or 2px. Consistent sizing."
+      },
+      "images": {
+        "avatars": [
+          "https://images.unsplash.com/photo-1576558656222-ba66febe3dec?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "https://images.unsplash.com/photo-1651684215020-f7a5b6610f23?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "https://images.unsplash.com/photo-1672527838035-90ae2ad2e813?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "https://images.unsplash.com/photo-1758876204244-930299843f07?crop=entropy&cs=srgb&fm=jpg&q=85"
+        ],
+        "dashboard_placeholders": [
+          "https://images.unsplash.com/photo-1603201667230-bd139210db18?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "https://images.unsplash.com/photo-1603201667106-0e3e0ae584c5?crop=entropy&cs=srgb&fm=jpg&q=85"
+        ]
+      }
+    },
+    "accessibility": {
+      "rules": [
+        "All interactive elements must have data-testid.",
+        "Ensure keyboard navigation for calendar grid.",
+        "Use ARIA labels for icon-only buttons."
+      ]
+    },
+    "universal_guidelines": [
+      "Avoid 'AI slop' aesthetic (generic centered layouts, gradients).",
+      "Create depth through z-index and layered elements.",
+      "Use sonner for toasts.",
+      "Components must use named exports.",
+      "Pages must use default exports."
+    ]
+  },
+  "implementation_steps": [
+    {
+      "phase": "Setup",
+      "tasks": [
+        "Install dependencies: framer-motion, lucide-react, date-fns, react-day-picker, sonner, clsx, tailwind-merge",
+        "Configure Tailwind theme with new colors and fonts",
+        "Set up global CSS variables"
+      ]
+    },
+    {
+      "phase": "Components",
+      "tasks": [
+        "Customize Shadcn Button, Input, Select, Dialog, Popover, Calendar",
+        "Create custom 'EventCard' component",
+        "Create 'CalendarGrid' component with drag-and-drop logic"
+      ]
+    },
+    {
+      "phase": "Pages",
+      "tasks": [
+        "Build Dashboard (Home) with Bento Grid layout",
+        "Build Calendar View (Monthly/Weekly)",
+        "Build Campaign List View",
+        "Build Create/Edit Campaign Modal"
+      ]
+    }
+  ]
+}
